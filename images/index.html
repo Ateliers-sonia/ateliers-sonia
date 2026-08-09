@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ateliers Sonia — Tableaux peints à la main | Peinture acrylique originale à vendre</title>
+<link rel="icon" type="image/png" href="images/logo.png">
+<meta name="description" content="Découvrez et achetez les peintures originales de Sonia : tableaux acryliques faits main, dragons, fées, figures spirituelles et paysages oniriques. Chaque œuvre est unique, expédiée avec soin.">
+<meta name="keywords" content="tableau original, peinture acrylique, tableau peint à la main, acheter tableau original, art fantastique peinture, tableau dragon, tableau fée, peinture spirituelle, tableau Ganesh, artiste peintre, atelier de peinture, œuvre d'art originale à vendre">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Sonia">
+<link rel="canonical" href="https://www.ateliers-sonia.fr/">
+
+<!-- Open Graph / réseaux sociaux -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Ateliers Sonia — Tableaux peints à la main">
+<meta property="og:description" content="Peintures originales à l'acrylique : dragons, fées, figures spirituelles et paysages oniriques. Chaque toile est unique et peinte à la main par Sonia.">
+<meta property="og:image" content="https://www.ateliers-sonia.fr/images/vers-la-lumiere.jpg">
+<meta property="og:url" content="https://www.ateliers-sonia.fr/">
+<meta property="og:site_name" content="Ateliers Sonia">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ateliers Sonia — Tableaux peints à la main">
+<meta name="twitter:description" content="Peintures originales à l'acrylique : dragons, fées, figures spirituelles et paysages oniriques.">
+<meta name="twitter:image" content="https://www.ateliers-sonia.fr/images/vers-la-lumiere.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600&family=Caveat:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --linen: #1A1522;
+    --linen-dark: #110D17;
+    --paper: #251E30;
+    --walnut: #F3ECDD;
+    --walnut-soft: #BCAFC7;
+    --ochre: #E0A458;
+    --ochre-dark: #C88A3E;
+    --sage: #7FA893;
+    --indigo: #8C9FD6;
+    --brick: #D17B62;
+    --line: rgba(243,236,221,0.13);
+    --shadow: 0 18px 44px -18px rgba(0,0,0,0.75);
+    --radius: 2px;
+  }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+
+  body{
+    background-color: var(--linen);
+    background-image:
+      radial-gradient(circle at 15% 10%, rgba(140,159,214,0.10) 0, transparent 40%),
+      radial-gradient(circle at 85% 15%, rgba(224,164,88,0.07) 0, transparent 45%),
+      radial-gradient(circle at 50% 90%, rgba(127,168,147,0.06) 0, transparent 50%);
+    color: var(--walnut);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: inherit; text-decoration: none; }
+  img{ max-width: 100%; display:block; }
+  ul{ list-style: none; }
+
+  :focus-visible{
+    outline: 2px solid var(--ochre-dark);
+    outline-offset: 3px;
+  }
+
+  .wrap{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 56px);
+  }
+
+  h1, h2, h3, .display{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--walnut);
+  }
+
+  .eyebrow{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--walnut-soft);
+  }
+
+  .signature{
+    font-family: 'Caveat', cursive;
+  }
+
+  /* ---------- Brushstroke divider ---------- */
+  .brush{
+    width: 92px;
+    height: 14px;
+    margin: 18px 0;
+  }
+  .brush path{ fill: var(--ochre); }
+  .brush.center{ margin-left:auto; margin-right:auto; }
+
+  /* ---------- Header ---------- */
+  header{
+    position: relative;
+    z-index: 90;
+    background: rgba(26,21,34,0.94);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav{
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    padding: 4px clamp(20px, 5vw, 56px) 0;
+  }
+  .brand{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: 'Caveat', cursive;
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: var(--walnut);
+  }
+  .brand-logo{
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    flex-shrink: 0;
+    margin: -8px 0;
+  }
+  .footer-logo{
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+  .nav-links{
+    position: absolute;
+    top: 100%; left:0; right:0;
+    z-index: 90;
+    background: var(--paper);
+    display:flex;
+    flex-direction: column;
+    gap: 0;
+    border-bottom: 1px solid var(--line);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    font-size: 0.92rem;
+    font-weight: 500;
+  }
+  .nav-links.open{ max-height: 320px; }
+  .nav-links a{
+    display: block;
+    padding: 16px clamp(20px,5vw,56px);
+    border-top: 1px solid var(--line);
+    width:100%;
+    position: relative;
+  }
+  .nav-links a::after{
+    content:'';
+    position:absolute;
+    left:clamp(20px,5vw,56px); right:clamp(20px,5vw,56px); bottom:8px;
+    height: 2px;
+    background: var(--ochre);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+    pointer-events: none;
+  }
+  .nav-links a:hover::after, .nav-links a:focus-visible::after{ transform: scaleX(1); }
+
+  .nav-toggle{
+    display:block;
+    background:none;
+    border:none;
+    cursor:pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: var(--walnut);
+    margin: 0 0 6px;
+    padding: 5px 14px;
+    border: 1px solid var(--walnut-soft);
+  }
+  .nav-toggle:hover{ border-color: var(--ochre); color: var(--ochre); }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position: relative;
+    padding: clamp(70px, 12vw, 130px) 0 clamp(60px, 9vw, 100px);
+    overflow: hidden;
+  }
+  .hero::before{
+    content:'';
+    position:absolute; inset:0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events:none;
+  }
+  .hero-inner{
+    position: relative;
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items:center;
+  }
+  @media (max-width: 860px){
+    .hero-inner{ grid-template-columns: 1fr; }
+    .hero-art{ order: -1; }
+  }
+  .hero h1{
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    line-height: 1.08;
+  }
+  .hero h1 em{
+    font-style: italic;
+    color: var(--ochre-dark);
+  }
+  .hero p.lead{
+    margin-top: 20px;
+    max-width: 46ch;
+    font-size: 1.08rem;
+    color: var(--walnut-soft);
+  }
+  .hero-sign{
+    margin-top: 28px;
+    display:flex;
+    align-items:center;
+    gap: 16px;
+  }
+  .hero-sign .signature{ font-size: 2.1rem; color: var(--walnut); }
+  .hero-sign span.role{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--walnut-soft);
+  }
+  .cta-row{
+    margin-top: 34px;
+    display:flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap: 8px;
+    padding: 13px 26px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.92rem;
+    border-radius: var(--radius);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform 0.18s ease, background 0.18s ease, border-color .18s ease;
+  }
+  .btn-primary{
+    background: var(--ochre);
+    color: var(--paper);
+  }
+  .btn-primary:hover{ background: var(--ochre-dark); transform: translateY(-1px); }
+  .btn-ghost{
+    border-color: var(--walnut);
+    color: var(--walnut);
+  }
+  .btn-ghost:hover{ background: var(--walnut); color: var(--paper); }
+
+  .hero-art{
+    position: relative;
+    aspect-ratio: 4/5;
+    border: 10px solid var(--paper);
+    box-shadow: var(--shadow);
+    background: var(--linen-dark);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 4px;
+  }
+  .hero-art .cell{
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-art .cell img{
+    width:100%; height:100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+  .hero-art .cell:hover img{ transform: scale(1.06); }
+  .hero-art::after{
+    content:'';
+    position:absolute; inset:0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .hero-art-label{
+    position:absolute;
+    bottom: -14px; left: 20px;
+    background: var(--paper);
+    padding: 10px 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    color: var(--walnut-soft);
+    box-shadow: var(--shadow);
+    z-index: 3;
+  }
+
+  /* ---------- Section shell ---------- */
+  section{ padding: clamp(60px, 9vw, 96px) 0; }
+  .section-head{
+    max-width: 640px;
+    margin-bottom: 48px;
+  }
+  .section-head h2{
+    font-size: clamp(1.9rem, 3.6vw, 2.5rem);
+    margin-top: 10px;
+  }
+  .section-head p{
+    margin-top: 16px;
+    color: var(--walnut-soft);
+    font-size: 1.02rem;
+  }
+
+  /* ---------- About ---------- */
+  .about{ background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .about-grid{
+    max-width: 680px;
+  }
+  .about p{ color: var(--walnut-soft); margin-top: 14px; max-width: 56ch; }
+  .about-quote{
+    margin-top: 26px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--walnut);
+    border-left: 3px solid var(--ochre);
+    padding-left: 18px;
+  }
+
+  /* ---------- Gallery / Shop ---------- */
+  .filter-row{
+    display:flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+  }
+  .filter-btn{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border: 1px solid var(--walnut);
+    background: transparent;
+    color: var(--walnut);
+    cursor:pointer;
+    transition: all .18s ease;
+  }
+  .filter-btn.active, .filter-btn:hover{
+    background: var(--walnut);
+    color: var(--paper);
+  }
+
+  .gallery-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px 28px;
+  }
+  @media (max-width: 940px){ .gallery-grid{ grid-template-columns: repeat(2,1fr); } }
+  @media (max-width: 600px){ .gallery-grid{ grid-template-columns: 1fr; } }
+
+  .card{
+    position: relative;
+    background: #303036;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    display:flex;
+    flex-direction: column;
+  }
+  .card-frame{
+    position: relative;
+    aspect-ratio: 4/5;
+    overflow:hidden;
+    cursor: zoom-in;
+    border-bottom: 1px solid var(--line);
+  }
+  .card-frame img, .card-frame .placeholder{
+    width:100%; height:100%;
+    object-fit: cover;
+    transition: transform .5s ease;
+  }
+  .card-frame:hover img, .card-frame:hover .placeholder{ transform: scale(1.045); }
+  .placeholder{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding: 18px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    color: rgba(247,241,230,0.85);
+  }
+  .badge{
+    position:absolute;
+    top: 12px; left: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.64rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    background: var(--paper);
+    color: var(--sage);
+    border: 1px solid var(--line);
+  }
+  .badge.sold{ color: var(--indigo); }
+
+  .card-body{
+    padding: 20px 22px 24px;
+    display:flex;
+    flex-direction: column;
+    gap: 6px;
+    flex:1;
+  }
+  .card-body h3{
+    font-size: 1.18rem;
+    font-weight: 500;
+    font-style: italic;
+  }
+  .card-meta{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--walnut-soft);
+    letter-spacing: 0.02em;
+  }
+  .card-foot{
+    margin-top: auto;
+    padding-top: 14px;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    border-top: 1px dashed var(--line);
+  }
+  .price{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.02rem;
+    font-weight: 500;
+  }
+  .shipping-note{
+    margin-top: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--sage);
+    letter-spacing: 0.02em;
+  }
+  .cart-btn{
+    margin-top: 10px;
+    width: 100%;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.78rem;
+    padding: 8px 14px;
+    background: transparent;
+    color: var(--walnut);
+    border: 1px solid var(--walnut-soft);
+    cursor: pointer;
+    transition: all .18s ease;
+  }
+  .cart-btn:hover{ border-color: var(--walnut); }
+  .cart-btn.in-cart{
+    background: var(--sage);
+    border-color: var(--sage);
+    color: var(--linen);
+  }
+
+  /* ---------- Cart bar & panel ---------- */
+  .cart-bar{
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    transform: translateX(-50%) translateY(120%);
+    z-index: 60;
+    background: var(--walnut);
+    color: var(--linen);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 14px 22px;
+    box-shadow: var(--shadow);
+    font-family: 'Work Sans', sans-serif;
+    transition: transform 0.3s ease;
+  }
+  .cart-bar.visible{ transform: translateX(-50%) translateY(0); }
+  .cart-bar-text{ font-size: 0.9rem; font-weight: 500; }
+  .cart-bar-text strong{ font-family: 'JetBrains Mono', monospace; }
+  .cart-bar-btn{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.82rem;
+    padding: 9px 18px;
+    background: var(--ochre);
+    color: var(--linen);
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .cart-bar-btn:hover{ background: var(--ochre-dark); }
+
+  .cart-overlay{
+    position: fixed; inset:0;
+    background: rgba(5,4,3,0.85);
+    display:flex; align-items:center; justify-content:center;
+    z-index: 70;
+    padding: 24px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+  .cart-overlay.open{ opacity: 1; pointer-events: auto; }
+  .cart-panel{
+    background: var(--paper);
+    width: 100%;
+    max-width: 480px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 28px;
+    position: relative;
+    box-shadow: var(--shadow);
+  }
+  .cart-panel h3{
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    margin-bottom: 18px;
+  }
+  .cart-panel-close{
+    position: absolute;
+    top: 18px; right: 20px;
+    background: none; border: none;
+    color: var(--walnut-soft);
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+  .cart-line{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.9rem;
+  }
+  .cart-line-remove{
+    background: none; border: none;
+    color: var(--brick);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .cart-total{
+    display:flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 2px solid var(--walnut);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    font-size: 1.05rem;
+  }
+  .cart-field{ margin-top: 20px; }
+  .cart-field label{
+    display:block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--walnut-soft);
+    margin-bottom: 8px;
+  }
+  .cart-field select{
+    width: 100%;
+    padding: 10px 12px;
+    background: var(--linen);
+    border: 1px solid var(--line);
+    color: var(--walnut);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.92rem;
+  }
+  .cart-submit{
+    margin-top: 22px;
+    width: 100%;
+    padding: 13px;
+    background: var(--ochre);
+    color: var(--linen);
+    border: none;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.92rem;
+    cursor: pointer;
+  }
+  .cart-submit:hover{ background: var(--ochre-dark); }
+  .cart-empty{
+    color: var(--walnut-soft);
+    font-size: 0.9rem;
+    padding: 20px 0;
+  }
+  .buy-btn{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.82rem;
+    padding: 9px 16px;
+    background: var(--ochre);
+    color: var(--paper);
+    border: none;
+    cursor: pointer;
+    transition: background .18s ease;
+  }
+  .buy-btn:hover{ background: var(--ochre-dark); }
+  .buy-btn[disabled]{
+    background: var(--linen-dark);
+    color: var(--walnut-soft);
+    cursor: not-allowed;
+  }
+
+  /* ---------- How it works ---------- */
+  .how{ background: var(--linen-dark); color: var(--walnut); }
+  .how .eyebrow{ color: rgba(243,236,221,0.55); }
+  .how h2{ color: var(--walnut); }
+  .how-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 40px;
+  }
+  @media (max-width: 780px){ .how-grid{ grid-template-columns: 1fr; } }
+  .how-item .num{
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 2.4rem;
+    color: var(--ochre);
+  }
+  .how-item h3{ color: var(--walnut); margin-top: 6px; font-size: 1.15rem; }
+  .how-item p{ margin-top: 10px; color: rgba(243,236,221,0.68); font-size: 0.96rem; }
+
+  /* ---------- Contact ---------- */
+  .contact-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+  }
+  @media (max-width: 860px){ .contact-grid{ grid-template-columns: 1fr; } }
+  .field{ margin-bottom: 18px; }
+  .field label{
+    display:block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--walnut-soft);
+    margin-bottom: 6px;
+  }
+  .field input, .field textarea{
+    width:100%;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.95rem;
+    color: var(--walnut);
+  }
+  .field textarea{ resize: vertical; min-height: 120px; }
+  .contact-info{
+    display:flex;
+    flex-direction:column;
+    gap: 20px;
+  }
+  .contact-info h3{ font-size: 1.3rem; }
+  .contact-info p{ color: var(--walnut-soft); }
+  .contact-info a{ color: var(--indigo); font-weight: 500; }
+  .contact-info a:hover{ text-decoration: underline; }
+
+  /* ---------- Footer ---------- */
+  footer{
+    border-top: 1px solid var(--line);
+    padding: 32px 0;
+  }
+  .footer-row{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 0.85rem;
+    color: var(--walnut-soft);
+  }
+  .footer-row .brand{ font-size: 1.4rem; }
+
+  /* ---------- Lightbox ---------- */
+  .lightbox{
+    position: fixed; inset:0;
+    background: rgba(5,4,3,0.9);
+    display:flex; align-items:center; justify-content:center;
+    z-index: 100;
+    padding: 32px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease;
+  }
+  .lightbox.open{ opacity:1; pointer-events:auto; }
+  .lightbox-inner{
+    max-width: 720px;
+    width:100%;
+    background: var(--paper);
+    padding: 18px;
+  }
+  .lightbox-frame{
+    aspect-ratio: 4/5;
+    max-height: 70vh;
+  }
+  .lightbox-frame img, .lightbox-frame .placeholder{ width:100%; height:100%; object-fit:cover; }
+  .lightbox-cap{
+    margin-top: 12px;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--walnut-soft);
+  }
+  .lightbox-close{
+    position:absolute;
+    top: 24px; right: 30px;
+    background:none; border:none;
+    color: var(--walnut);
+    font-size: 1.6rem;
+    cursor:pointer;
+    line-height:1;
+  }
+</style>
+
+<!-- Données structurées pour les moteurs de recherche -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sonia",
+  "jobTitle": "Peintre",
+  "url": "https://www.ateliers-sonia.fr/",
+  "description": "Peintre autodidacte, spécialisée en peinture acrylique originale : dragons, fées, figures spirituelles et paysages oniriques.",
+  "makesOffer": {
+    "@type": "Offer",
+    "itemOffered": {
+      "@type": "VisualArtwork",
+      "artform": "Peinture",
+      "artMedium": "Acrylique sur toile"
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "Ateliers Sonia",
+  "description": "Boutique en ligne de peintures acryliques originales faites main.",
+  "url": "https://www.ateliers-sonia.fr/",
+  "image": "https://www.ateliers-sonia.fr/images/vers-la-lumiere.jpg",
+  "priceRange": "150€ - 600€",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Saint-Gildas-de-Rhuys",
+    "addressCountry": "FR"
+  }
+}
+</script>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand"><img src="images/logo.png" alt="Ateliers Sonia" class="brand-logo"></a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">MENU</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="#infos">Infos pratiques</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ---------- HERO ---------- -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <p class="eyebrow">Peintures originales · Pièces uniques</p>
+        <h1>Chaque toile part d'un <em>silence</em>,<br>et finit par raconter quelque chose.</h1>
+        <p class="lead">Je suis Sonia. Je peins à l'acrylique depuis mon atelier, avec passion et sans école — chaque tableau présenté ici est une pièce unique, peinte à la main.</p>
+        <div class="hero-sign">
+          <span class="signature">Sonia</span>
+          <span class="role">Peintre — Atelier à Saint-Gildas-de-Rhuys</span>
+        </div>
+        <div class="cta-row">
+          <a href="#galerie" class="btn btn-primary">Voir la galerie</a>
+          <a href="#apropos" class="btn btn-ghost">L'artiste</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="cell"><img src="images/vers-la-lumiere.jpg" alt="Vers la lumière, tableau original de Sonia" loading="eager"></div>
+        <div class="cell"><img src="images/ange-de-lumiere.jpg" alt="Ange de lumière, tableau original de Sonia" loading="eager"></div>
+        <div class="cell"><img src="images/sous-les-cerisiers.jpg" alt="Sous les cerisiers, tableau original de Sonia" loading="eager"></div>
+        <div class="cell"><img src="images/la-fee-et-le-dragon.jpg" alt="La fée et le dragon, tableau original de Sonia" loading="eager"></div>
+        <div class="hero-art-label">Quelques œuvres, 2026</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- ABOUT ---------- -->
+  <section class="about" id="apropos">
+    <div class="wrap about-grid">
+      <div>
+        <p class="eyebrow">L'artiste</p>
+        <h2>Peindre, un geste avant tout</h2>
+        <p>Je peins depuis quelques mois seulement, à l'acrylique, en autodidacte — un vrai coup de cœur devenu une pratique quotidienne. Je suis attirée par les univers oniriques : dragons, fées, figures spirituelles et paysages qui n'existent nulle part ailleurs que dans mon imagination.</p>
+        <p>Toutes les pièces présentées sur ce site sont uniques et peintes à la main dans mon atelier. Aucune n'est reproduite en série.</p>
+        <p class="about-quote">« Je ne cherche pas à représenter ce que je vois, mais ce que ça me fait. »</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- GALLERY / SHOP ---------- -->
+  <section id="galerie" style="background:#26262B; border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Galerie</p>
+        <h2>Mes œuvres</h2>
+        <p>Chaque tableau est une pièce unique, peinte à la main — je ne reproduis pas mes œuvres. Une fois vendu, un tableau n'est donc plus disponible. Cliquez sur une œuvre pour l'agrandir.</p>
+      </div>
+
+      <div class="filter-row" id="filterRow">
+        <button class="filter-btn active" data-filter="all">Tout</button>
+        <button class="filter-btn" data-filter="fantastique">Fantastique</button>
+        <button class="filter-btn" data-filter="spirituel">Spirituel</button>
+        <button class="filter-btn" data-filter="paysage">Paysages</button>
+      </div>
+      <div class="filter-row" id="availRow" style="margin-top:-24px;">
+        <button class="filter-btn active" data-avail="all">Tous les statuts</button>
+        <button class="filter-btn" data-avail="available">Disponible uniquement</button>
+        <button class="filter-btn" data-avail="sold">Vendu uniquement</button>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
+  </section>
+
+  <!-- ---------- HOW IT WORKS ---------- -->
+  <section class="how" id="infos">
+    <div class="wrap">
+      <p class="eyebrow">Infos pratiques</p>
+      <h2>Comment se passe un achat</h2>
+      <div class="how-grid">
+        <div class="how-item">
+          <div class="num">01</div>
+          <h3>Choisissez une œuvre</h3>
+          <p>Chaque tableau est une pièce unique, peinte à la main. Il n'existe qu'en un seul exemplaire et n'est jamais reproduit.</p>
+        </div>
+        <div class="how-item">
+          <div class="num">02</div>
+          <h3>Paiement sécurisé</h3>
+          <p>Le règlement se fait en ligne par carte bancaire. Le prix affiché inclut les frais d'expédition en France métropolitaine.</p>
+        </div>
+        <div class="how-item">
+          <div class="num">03</div>
+          <h3>Expédition soignée</h3>
+          <p>Envoi via Colissimo ou Mondial Relay (au choix), emballage protégé, avec numéro de suivi, sous 5 à 8 jours après réception du paiement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- CONTACT ---------- -->
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>Une question sur une œuvre ?</h2>
+        <p style="margin-top:14px; color:var(--walnut-soft); max-width:48ch;">Pour une commande sur-mesure, une question sur une expédition, ou simplement dire bonjour.</p>
+        <form id="contactForm" style="margin-top:28px;">
+          <div class="field">
+            <label for="name">Nom</label>
+            <input id="name" name="name" type="text" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Envoyer le message</button>
+        </form>
+      </div>
+      <div class="contact-info">
+        <div>
+          <h3>Écrire directement</h3>
+          <p><a href="mailto:contact@ateliers-sonia.fr">contact@ateliers-sonia.fr</a></p>
+        </div>
+        <div>
+          <h3>Atelier</h3>
+          <p>Saint-Gildas-de-Rhuys, Morbihan<br>Visites sur rendez-vous uniquement</p>
+        </div>
+        <div>
+          <h3>Suivre le travail</h3>
+          <p style="display:flex; gap:16px; margin-top:6px;">
+            <a href="https://www.instagram.com/ateliers_sonia/" target="_blank" rel="noopener" aria-label="Instagram" style="display:inline-flex;">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@ateliers_sonia" target="_blank" rel="noopener" aria-label="TikTok" style="display:inline-flex;">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 2h-3v13.2a2.8 2.8 0 1 1-2-2.68V9.4a5.9 5.9 0 1 0 5 5.83V8.2a6.3 6.3 0 0 0 4 1.42V6.5a3.4 3.4 0 0 1-4-4.5z"/></svg>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <span class="brand signature"><img src="images/logo.png" alt="Ateliers Sonia" class="footer-logo"></span>
+    <span>© 2026 Ateliers Sonia — Toutes les œuvres sont protégées par le droit d'auteur. — <a href="mentions-legales.html" style="color:var(--walnut-soft); text-decoration:underline;">Mentions légales</a></span>
+  </div>
+</footer>
+
+<!-- ---------- LIGHTBOX ---------- -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Fermer">&times;</button>
+  <div class="lightbox-inner">
+    <div class="lightbox-frame" id="lightboxFrame"></div>
+    <div class="lightbox-cap">
+      <span id="lightboxTitle"></span>
+      <span id="lightboxMeta"></span>
+    </div>
+  </div>
+</div>
+
+<svg style="position:absolute; width:0; height:0;">
+  <symbol id="brush-shape" viewBox="0 0 92 14">
+    <path d="M2 8 C 20 -2, 40 14, 60 6 S 88 2, 90 8 C 88 12, 70 14, 50 9 S 10 4, 2 8 Z"/>
+  </symbol>
+</svg>
+
+<!-- ---------- CART BAR ---------- -->
+<div class="cart-bar" id="cartBar">
+  <span class="cart-bar-text"><strong id="cartCount">0</strong> tableau(x) sélectionné(s) — <strong id="cartTotal">0 €</strong></span>
+  <button class="cart-bar-btn" id="cartOpenBtn">Voir mon panier</button>
+</div>
+
+<!-- ---------- CART PANEL ---------- -->
+<div class="cart-overlay" id="cartOverlay">
+  <div class="cart-panel">
+    <button class="cart-panel-close" id="cartCloseBtn" aria-label="Fermer">&times;</button>
+    <h3>Mon panier</h3>
+    <div id="cartLines"></div>
+    <div class="cart-total">
+      <span>Total</span>
+      <span id="cartPanelTotal">0 €</span>
+    </div>
+    <div class="cart-field">
+      <label for="deliveryMethod">Mode de livraison souhaité</label>
+      <select id="deliveryMethod">
+        <option value="Colissimo">Colissimo (à domicile)</option>
+        <option value="Mondial Relay">Mondial Relay (point relais)</option>
+      </select>
+    </div>
+    <div id="mrWidgetWrap" style="display:none; margin-top:16px;">
+      <label style="display:block; font-family:'JetBrains Mono', monospace; font-size:0.7rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--walnut-soft); margin-bottom:8px;">Choisissez votre point relais</label>
+      <div id="Zone_Widget" style="max-height:320px; overflow-y:auto;"></div>
+      <input type="hidden" id="Retour_Widget" value="">
+      <p id="mrSelectedInfo" style="margin-top:8px; font-size:0.85rem; color:var(--sage); font-family:'JetBrains Mono', monospace;"></p>
+    </div>
+    <button class="cart-submit" id="cartSubmitBtn">Payer maintenant</button>
+  </div>
+</div>
+
+<!-- Widget officiel Mondial Relay pour le choix du point relais -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://widget.mondialrelay.com/parcelshop-picker/jquery.plugin.mondialrelay.parcelshoppicker.min.js"></script>
+
+<script>
+/*
+  ============================================================
+  POUR AJOUTER UN TABLEAU :
+  Ajoutez une ligne ici avec les infos réelles.
+  - image      : chemin vers la photo, dans le dossier /images
+  - title      : titre de l'œuvre
+  - category   : "fantastique", "spirituel" ou "paysage"
+  - dims       : dimensions réelles de la toile
+  - price      : prix en euros, frais de port France inclus
+  - sold       : true si déjà vendu
+  - buyLink    : non utilisé (le paiement est généré automatiquement via Stripe), à laisser tel quel
+  ============================================================
+*/
+const paintings = [
+  { image:"images/delivrance.jpg", title:"Délivrance", category:"spirituel", mediumLabel:"Acrylique sur toile", dims:"55 × 75 cm", price:180, sold:true, buyLink:"#" },
+
+  { image:"images/ailes-flamboyantes.jpg", title:"Ailes flamboyantes", category:"spirituel", mediumLabel:"Acrylique sur toile", dims:"40 × 50 cm", price:130, sold:true, buyLink:"#" },
+
+  { image:"images/dragon-ecarlate.jpg", title:"Dragon écarlate", category:"fantastique", mediumLabel:"Acrylique sur toile", dims:"30 × 40 cm", price:75, sold:true, buyLink:"#" },
+
+  { image:"images/vers-la-lumiere.jpg", title:"Vers la lumière", category:"spirituel", mediumLabel:"Acrylique sur toile", dims:"38 × 38 cm", price:95, sold:false, buyLink:"#" },
+
+  { image:"images/aurore-sur-le-lac.jpg", title:"Aurore sur le lac", category:"paysage", mediumLabel:"Acrylique sur toile", dims:"38 × 38 cm", price:55, sold:false, buyLink:"#" },
+
+  { image:"images/ange-des-vagues.jpg", title:"Ange des vagues", category:"spirituel", mediumLabel:"Acrylique sur toile", dims:"38 × 38 cm", price:90, sold:true, buyLink:"#" },
+
+  { image:"images/ange-de-lumiere.jpg", title:"Ange de lumière", category:"spirituel", mediumLabel:"Acrylique sur toile", dims:"40 × 50 cm", price:160, sold:true, buyLink:"#" },
+
+  { image:"images/deesse-de-l-abondance.jpg", title:"Déesse de l'abondance", category:"spirituel", mediumLabel:"Acrylique sur toile", dims:"40 × 50 cm", price:130, sold:true, buyLink:"#" },
+
+  { image:"images/ganesh.jpg", title:"Ganesh", category:"spirituel", mediumLabel:"Acrylique sur toile", dims:"40 × 50 cm", price:115, sold:true, buyLink:"#" },
+
+  { image:"images/jardin-au-couchant.jpg", title:"Jardin au couchant", category:"paysage", mediumLabel:"Acrylique sur toile", dims:"40 × 50 cm", price:125, sold:true, buyLink:"#" },
+
+  { image:"images/l-arbre-aux-fees.jpg", title:"L'arbre aux fées", category:"fantastique", mediumLabel:"Acrylique sur toile", dims:"40 × 50 cm", price:175, sold:false, buyLink:"#" },
+
+  { image:"images/cascade-sous-ciel-bleu.jpg", title:"Cascade sous ciel bleu", category:"paysage", mediumLabel:"Acrylique sur toile", dims:"40 × 50 cm", price:135, sold:false, buyLink:"#" },
+
+  { image:"images/dragon-des-mers.jpg", title:"Dragon des mers", category:"fantastique", mediumLabel:"Acrylique sur toile", dims:"55 × 75 cm", price:185, sold:false, buyLink:"#" },
+
+  { image:"images/dragon-celeste.jpg", title:"Dragon céleste", category:"fantastique", mediumLabel:"Acrylique sur toile", dims:"55 × 75 cm", price:195, sold:true, buyLink:"#" },
+
+  { image:"images/sous-les-cerisiers.jpg", title:"Sous les cerisiers", category:"paysage", mediumLabel:"Acrylique sur toile", dims:"55 × 75 cm", price:200, sold:true, buyLink:"#" },
+
+  { image:"images/l-arbre-de-vie.jpg", title:"L'arbre de vie", category:"spirituel", mediumLabel:"Acrylique sur toile", dims:"55 × 75 cm", price:175, sold:true, buyLink:"#" },
+
+  { image:"images/la-fee-et-le-dragon.jpg", title:"La fée et le dragon", category:"fantastique", mediumLabel:"Acrylique sur toile", dims:"55 × 75 cm", price:210, sold:false, buyLink:"#" },
+];
+
+const grid = document.getElementById('galleryGrid');
+
+function cardHTML(p, i){
+  const imgOrPlaceholder = p.image
+    ? `<img src="${p.image}" alt="${p.title} — tableau original peint à la main par Sonia, ${p.mediumLabel}, ${p.dims}" loading="lazy">`
+    : `<div class="placeholder">Photo à ajouter<br>« ${p.title} »</div>`;
+  return `
+  <article class="card" data-category="${p.category}">
+    <div class="card-frame" data-index="${i}">
+      ${imgOrPlaceholder}
+      <span class="badge ${p.sold ? 'sold' : ''}">${p.sold ? 'Vendu' : 'Disponible'}</span>
+    </div>
+    <div class="card-body">
+      <h3>${p.title}</h3>
+      <p class="card-meta">${p.mediumLabel} · ${p.dims}</p>
+      <div class="card-foot">
+        <span class="price">${p.price} €</span>
+        ${p.sold
+          ? `<button class="buy-btn" disabled>Vendu</button>`
+          : `<button class="buy-btn" data-buy-now="${p.title}|${p.price}">Acheter</button>`}
+      </div>
+      ${p.sold ? '' : `<p class="shipping-note">Envoi en France métropolitaine inclus</p>`}
+      ${p.sold ? '' : `<button class="cart-btn" data-cart-add="${p.title}|${p.price}">+ Ajouter au panier</button>`}
+    </div>
+  </article>`;
+}
+
+function render(filter, avail){
+  grid.innerHTML = paintings
+    .map((p,i)=>({p,i}))
+    .filter(({p}) => filter === 'all' || p.category === filter)
+    .filter(({p}) => avail === 'all' || (avail === 'available' && !p.sold) || (avail === 'sold' && p.sold))
+    .map(({p,i}) => cardHTML(p,i))
+    .join('');
+  attachFrameEvents();
+}
+
+function attachFrameEvents(){
+  document.querySelectorAll('.card-frame').forEach(el=>{
+    el.addEventListener('click', ()=>{
+      const p = paintings[el.dataset.index];
+      openLightbox(p);
+    });
+  });
+  document.querySelectorAll('[data-buy-now]').forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      const [title, price] = btn.dataset.buyNow.split('|');
+      buyNow(title, Number(price), btn);
+    });
+  });
+  document.querySelectorAll('[data-cart-add]').forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      const [title, price] = btn.dataset.cartAdd.split('|');
+      toggleCartItem(title, Number(price), btn);
+    });
+  });
+  syncCartButtons();
+}
+
+/* ---------- Paiement (Stripe, via fonction Netlify) ---------- */
+async function startCheckout(items, delivery, deliveryDetail, triggerBtn){
+  const originalText = triggerBtn ? triggerBtn.textContent : null;
+  if(triggerBtn){
+    triggerBtn.disabled = true;
+    triggerBtn.textContent = 'Chargement...';
+  }
+  try {
+    const res = await fetch('/.netlify/functions/create-checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items, delivery, deliveryDetail })
+    });
+    const data = await res.json();
+    if(!res.ok || !data.url){
+      throw new Error(data.error || 'Erreur inconnue');
+    }
+    window.location.href = data.url;
+  } catch(err){
+    alert("Une erreur est survenue lors de la préparation du paiement. Vous pouvez contacter Sonia directement pour finaliser votre commande.\n\n(" + err.message + ")");
+    if(triggerBtn){
+      triggerBtn.disabled = false;
+      triggerBtn.textContent = originalText;
+    }
+  }
+}
+
+function buyNow(title, price, btn){
+  startCheckout([{ title, price }], null, null, btn);
+}
+
+/* ---------- Panier ---------- */
+let cart = [];
+
+function toggleCartItem(title, price, btn){
+  const idx = cart.findIndex(item => item.title === title);
+  if(idx > -1){
+    cart.splice(idx, 1);
+  } else {
+    cart.push({ title, price });
+  }
+  syncCartButtons();
+  updateCartBar();
+  renderCartLines();
+}
+
+function syncCartButtons(){
+  document.querySelectorAll('[data-cart-add]').forEach(btn=>{
+    const title = btn.dataset.cartAdd.split('|')[0];
+    const inCart = cart.some(item => item.title === title);
+    btn.textContent = inCart ? '✓ Dans le panier' : '+ Ajouter au panier';
+    btn.classList.toggle('in-cart', inCart);
+  });
+}
+
+function cartTotalValue(){
+  return cart.reduce((sum, item) => sum + item.price, 0);
+}
+
+function updateCartBar(){
+  const bar = document.getElementById('cartBar');
+  document.getElementById('cartCount').textContent = cart.length;
+  document.getElementById('cartTotal').textContent = cartTotalValue() + ' €';
+  bar.classList.toggle('visible', cart.length > 0);
+}
+
+function renderCartLines(){
+  const linesEl = document.getElementById('cartLines');
+  const totalEl = document.getElementById('cartPanelTotal');
+  if(cart.length === 0){
+    linesEl.innerHTML = `<p class="cart-empty">Votre panier est vide pour l'instant. Ajoutez un ou plusieurs tableaux depuis la galerie.</p>`;
+  } else {
+    linesEl.innerHTML = cart.map((item, i) => `
+      <div class="cart-line">
+        <span>${item.title} — ${item.price} €</span>
+        <button class="cart-line-remove" data-remove-index="${i}">Retirer</button>
+      </div>
+    `).join('');
+    linesEl.querySelectorAll('[data-remove-index]').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const idx = Number(btn.dataset.removeIndex);
+        cart.splice(idx, 1);
+        syncCartButtons();
+        updateCartBar();
+        renderCartLines();
+      });
+    });
+  }
+  totalEl.textContent = cartTotalValue() + ' €';
+}
+
+document.getElementById('cartOpenBtn').addEventListener('click', ()=>{
+  renderCartLines();
+  document.getElementById('cartOverlay').classList.add('open');
+});
+document.getElementById('cartCloseBtn').addEventListener('click', ()=>{
+  document.getElementById('cartOverlay').classList.remove('open');
+});
+document.getElementById('cartOverlay').addEventListener('click', (e)=>{
+  if(e.target.id === 'cartOverlay') document.getElementById('cartOverlay').classList.remove('open');
+});
+
+/* ---------- Widget Mondial Relay ----------
+   Code Enseigne réel de Sonia (compte professionnel activé).
+*/
+const MONDIAL_RELAY_BRAND = "CC240RI7";
+let mrWidgetLoaded = false;
+
+document.getElementById('deliveryMethod').addEventListener('change', (e)=>{
+  const wrap = document.getElementById('mrWidgetWrap');
+  if(e.target.value === 'Mondial Relay'){
+    wrap.style.display = 'block';
+    if(!mrWidgetLoaded && window.jQuery){
+      jQuery("#Zone_Widget").MR_ParcelShopPicker({
+        Target: "#Retour_Widget",
+        TargetDisplay: "#mrSelectedInfo",
+        Brand: MONDIAL_RELAY_BRAND,
+        Country: "FR",
+        NbResults: "7",
+        Responsive: true,
+        ShowResultsOnMap: false
+      });
+      mrWidgetLoaded = true;
+    }
+  } else {
+    wrap.style.display = 'none';
+  }
+});
+
+document.getElementById('cartSubmitBtn').addEventListener('click', (e)=>{
+  if(cart.length === 0) return;
+  const delivery = document.getElementById('deliveryMethod').value;
+  let deliveryDetail = null;
+  if(delivery === 'Mondial Relay'){
+    if(!document.getElementById('Retour_Widget').value){
+      alert('Merci de sélectionner un point relais dans la liste avant de valider.');
+      return;
+    }
+    deliveryDetail = document.getElementById('mrSelectedInfo').textContent.trim();
+  }
+  const items = cart.map(item => ({ title: item.title, price: item.price }));
+  startCheckout(items, delivery, deliveryDetail, e.currentTarget);
+});
+
+let currentCategoryFilter = 'all';
+let currentAvailFilter = 'all';
+
+document.getElementById('filterRow').addEventListener('click', (e)=>{
+  const btn = e.target.closest('.filter-btn');
+  if(!btn) return;
+  document.querySelectorAll('#filterRow .filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  currentCategoryFilter = btn.dataset.filter;
+  render(currentCategoryFilter, currentAvailFilter);
+});
+
+document.getElementById('availRow').addEventListener('click', (e)=>{
+  const btn = e.target.closest('.filter-btn');
+  if(!btn) return;
+  document.querySelectorAll('#availRow .filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  currentAvailFilter = btn.dataset.avail;
+  render(currentCategoryFilter, currentAvailFilter);
+});
+
+render('all', 'all');
+
+/* Données structurées par tableau : aide Google à afficher prix/disponibilité
+   directement dans les résultats de recherche (rich snippets, Google Images). */
+function injectProductSchema(){
+  const items = paintings.map((p, i) => ({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": `${p.title} — tableau original ${p.mediumLabel.toLowerCase()}, Sonia`,
+    "image": p.image ? `https://www.ateliers-sonia.fr/${p.image}` : undefined,
+    "description": `Tableau original peint à la main par Sonia. ${p.mediumLabel}, ${p.dims}. ${p.sold ? "Ce modèle est vendu mais peut être recréé sur commande." : "Pièce unique."}`,
+    "sku": `atelier-sonia-${i+1}`,
+    "brand": { "@type": "Brand", "name": "Ateliers Sonia" },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "EUR",
+      "price": p.price,
+      "availability": p.sold
+        ? "https://schema.org/PreOrder"
+        : "https://schema.org/InStock",
+      "url": "https://www.ateliers-sonia.fr/#galerie"
+    }
+  }));
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify(items);
+  document.head.appendChild(script);
+}
+injectProductSchema();
+
+/* Lightbox */
+const lightbox = document.getElementById('lightbox');
+const lightboxFrame = document.getElementById('lightboxFrame');
+const lightboxTitle = document.getElementById('lightboxTitle');
+const lightboxMeta = document.getElementById('lightboxMeta');
+
+function openLightbox(p){
+  lightboxFrame.innerHTML = p.image
+    ? `<img src="${p.image}" alt="${p.title}">`
+    : `<div class="placeholder" style="background:linear-gradient(135deg,#C98F4E,#A8622F,#6E7C5B,#3C4A68);">Photo à ajouter<br>« ${p.title} »</div>`;
+  lightboxTitle.textContent = p.title;
+  lightboxMeta.textContent = `${p.mediumLabel} · ${p.dims} · ${p.sold ? 'Vendu' : p.price + ' €'}`;
+  lightbox.classList.add('open');
+}
+document.getElementById('lightboxClose').addEventListener('click', ()=> lightbox.classList.remove('open'));
+lightbox.addEventListener('click', (e)=>{ if(e.target === lightbox) lightbox.classList.remove('open'); });
+document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') lightbox.classList.remove('open'); });
+
+/* Mobile nav */
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', ()=>{
+  const open = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', open);
+});
+navLinks.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> navLinks.classList.remove('open')));
+
+/* Contact form (démo : ouvre le client mail avec le message pré-rempli) */
+document.getElementById('contactForm').addEventListener('submit', (e)=>{
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+  const subject = encodeURIComponent(`Message depuis le site — ${name}`);
+  const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+  window.location.href = `mailto:contact@ateliers-sonia.fr?subject=${subject}&body=${body}`;
+});
+</script>
+
+</body>
+</html>
