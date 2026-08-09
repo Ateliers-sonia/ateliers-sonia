@@ -113,6 +113,7 @@
   /* ---------- Header ---------- */
   header{
     position: relative;
+    z-index: 90;
     background: rgba(26,21,34,0.94);
     backdrop-filter: blur(6px);
     border-bottom: 1px solid var(--line);
@@ -150,6 +151,7 @@
   .nav-links{
     position: absolute;
     top: 100%; left:0; right:0;
+    z-index: 90;
     background: var(--paper);
     display:flex;
     flex-direction: column;
@@ -163,6 +165,7 @@
   }
   .nav-links.open{ max-height: 320px; }
   .nav-links a{
+    display: block;
     padding: 16px clamp(20px,5vw,56px);
     border-top: 1px solid var(--line);
     width:100%;
@@ -177,6 +180,7 @@
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.25s ease;
+    pointer-events: none;
   }
   .nav-links a:hover::after, .nav-links a:focus-visible::after{ transform: scaleX(1); }
 
@@ -929,7 +933,14 @@
         </div>
         <div>
           <h3>Suivre le travail</h3>
-          <p><a href="https://www.instagram.com/ateliers_sonia/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/@ateliers_sonia" target="_blank" rel="noopener">TikTok</a></p>
+          <p style="display:flex; gap:16px; margin-top:6px;">
+            <a href="https://www.instagram.com/ateliers_sonia/" target="_blank" rel="noopener" aria-label="Instagram" style="display:inline-flex;">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@ateliers_sonia" target="_blank" rel="noopener" aria-label="TikTok" style="display:inline-flex;">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 2h-3v13.2a2.8 2.8 0 1 1-2-2.68V9.4a5.9 5.9 0 1 0 5 5.83V8.2a6.3 6.3 0 0 0 4 1.42V6.5a3.4 3.4 0 0 1-4-4.5z"/></svg>
+            </a>
+          </p>
         </div>
       </div>
     </div>
