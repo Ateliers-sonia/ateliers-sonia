@@ -40,7 +40,9 @@ exports.handler = async (event) => {
   const RESEND_FROM = process.env.RESEND_FROM || 'notifications@ateliers-sonia.fr';
 
   const sig = event.headers['stripe-signature'] || event.headers['Stripe-Signature'];
-  const rawBody = event.body;
+  const rawBody = event.isBase64Encoded
+    ? Buffer.from(event.body, 'base64').toString('utf8')
+    : event.body;
 
   if (!WEBHOOK_SECRET || !verifyStripeSignature(rawBody, sig, WEBHOOK_SECRET)) {
     return { statusCode: 400, body: 'Signature invalide.' };
