@@ -45,7 +45,21 @@ exports.handler = async (event) => {
     : event.body;
 
   if (!WEBHOOK_SECRET || !verifyStripeSignature(rawBody, sig, WEBHOOK_SECRET)) {
-    return { statusCode: 400, body: 'Signature invalide.' };
+    return {
+      statusCode: 400,
+      body: JSON.stringify({
+        error: 'Signature invalide.',
+        debug: {
+          secretPresent: !!WEBHOOK_SECRET,
+          secretLength: WEBHOOK_SECRET ? WEBHOOK_SECRET.length : 0,
+          secretStartsWith: WEBHOOK_SECRET ? WEBHOOK_SECRET.slice(0, 6) : null,
+          sigHeaderPresent: !!sig,
+          sigHeaderSample: sig ? sig.slice(0, 30) : null,
+          isBase64Encoded: !!event.isBase64Encoded,
+          bodyLength: rawBody ? rawBody.length : 0
+        }
+      })
+    };
   }
 
   let stripeEvent;
