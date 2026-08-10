@@ -1000,7 +1000,7 @@
       <label style="display:block; font-family:'JetBrains Mono', monospace; font-size:0.7rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--walnut-soft); margin-bottom:8px;">Choisissez votre point relais</label>
       <div id="Zone_Widget" style="max-height:320px; overflow-y:auto;"></div>
       <input type="hidden" id="Retour_Widget" value="">
-      <p id="mrSelectedInfo" style="margin-top:8px; font-size:0.85rem; color:var(--sage); font-family:'JetBrains Mono', monospace;"></p>
+      <input type="text" id="mrSelectedInfo" readonly style="margin-top:8px; width:100%; padding:8px 10px; font-size:0.85rem; color:var(--sage); font-family:'JetBrains Mono', monospace; background:var(--linen); border:1px solid var(--line);">
     </div>
     <button class="cart-submit" id="cartSubmitBtn">Payer maintenant</button>
   </div>
@@ -1269,7 +1269,7 @@ document.getElementById('cartSubmitBtn').addEventListener('click', (e)=>{
       alert('Merci de sélectionner un point relais dans la liste avant de valider.');
       return;
     }
-    deliveryDetail = document.getElementById('mrSelectedInfo').textContent.trim();
+    deliveryDetail = document.getElementById('mrSelectedInfo').value.trim();
   }
   const items = cart.map(item => ({ title: item.title, price: item.price }));
   startCheckout(items, delivery, deliveryDetail, e.currentTarget);
