@@ -100,7 +100,7 @@ ${pointRelais ? 'Point relais choisi : ' + pointRelais : (shippingText ? 'Adress
 Référence de paiement Stripe : ${session.id}
 `;
 
-    await fetch('https://api.resend.com/emails', {
+    const resendRes = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${RESEND_API_KEY}`,
@@ -113,6 +113,11 @@ Référence de paiement Stripe : ${session.id}
         text: emailBody
       })
     });
+
+    if (!resendRes.ok) {
+      const errText = await resendRes.text();
+      return { statusCode: 502, body: `Échec envoi Resend: ${errText}` };
+    }
 
     return { statusCode: 200, body: 'ok' };
 
