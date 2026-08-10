@@ -1027,6 +1027,7 @@
   ============================================================
 */
 const paintings = [
+  { image:"", title:"⚠️ TEST — à ne pas acheter", category:"spirituel", mediumLabel:"Test technique", dims:"—", price:1, sold:false, buyLink:"#" },
   { image:"images/renaissance.jpg", title:"Renaissance", category:"spirituel", mediumLabel:"Acrylique sur toile", dims:"40 × 50 cm", price:150, sold:true, buyLink:"#" },
   { image:"images/delivrance.jpg", title:"Délivrance", category:"spirituel", mediumLabel:"Acrylique sur toile", dims:"55 × 75 cm", price:180, sold:true, buyLink:"#" },
 
@@ -1251,7 +1252,11 @@ document.getElementById('deliveryMethod').addEventListener('change', (e)=>{
         Country: "FR",
         NbResults: "7",
         Responsive: true,
-        ShowResultsOnMap: false
+        ShowResultsOnMap: false,
+        OnParcelShopSelected: function(data){
+          const full = `${data.Nom} — ${data.Adresse1}${data.Adresse2 ? ' ' + data.Adresse2 : ''}, ${data.CP} ${data.Ville} (réf. ${data.ID})`;
+          document.getElementById('mrSelectedInfo').value = full;
+        }
       });
       mrWidgetLoaded = true;
     }

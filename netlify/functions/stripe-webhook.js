@@ -88,10 +88,13 @@ exports.handler = async (event) => {
 
     const total = (session.amount_total / 100).toFixed(2);
     const customerEmail = session.customer_details?.email || 'Non renseigné';
-    const customerName = session.customer_details?.name || session.shipping_details?.name || 'Non renseigné';
+    const customerName = session.customer_details?.name || session.shipping_details?.name || session.collected_information?.shipping_details?.name || 'Non renseigné';
     const customerPhone = session.customer_details?.phone || 'Non renseigné';
-    const shipping = session.shipping_details?.address;
-    const shippingText = shipping
+    const shipping = session.shipping_details?.address
+      || session.collected_information?.shipping_details?.address
+      || session.customer_details?.address;
+    const hasRealAddress = shipping && (shipping.line1 || shipping.city || shipping.postal_code);
+    const shippingText = hasRealAddress
       ? `${shipping.line1 || ''} ${shipping.line2 || ''}, ${shipping.postal_code || ''} ${shipping.city || ''}, ${shipping.country || ''}`.trim()
       : null;
     const delivery = session.metadata?.mode_livraison || 'Non précisé';
