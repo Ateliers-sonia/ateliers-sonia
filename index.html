@@ -888,7 +888,7 @@
         <div class="how-item">
           <div class="num">02</div>
           <h3>Paiement sécurisé</h3>
-          <p>Le règlement se fait en ligne par carte bancaire. Le prix affiché inclut les frais d'expédition en France métropolitaine.</p>
+          <p>Le règlement se fait en ligne par carte bancaire. Le prix affiché inclut les frais d'expédition en France métropolitaine. Pour un envoi en DOM-TOM ou à l'international, contactez-moi avant votre achat afin d'organiser la livraison ensemble.</p>
         </div>
         <div class="how-item">
           <div class="num">03</div>
@@ -1085,7 +1085,7 @@ function cardHTML(p, i){
           ? `<button class="buy-btn" disabled>Vendu</button>`
           : `<button class="buy-btn" data-buy-now="${p.title}|${p.price}">Acheter</button>`}
       </div>
-      ${p.sold ? '' : `<p class="shipping-note">Envoi en France métropolitaine inclus</p>`}
+      ${p.sold ? '' : `<p class="shipping-note">Envoi en France métropolitaine inclus — DOM-TOM/international : nous contacter</p>`}
       ${p.sold ? '' : `<button class="cart-btn" data-cart-add="${p.title}|${p.price}">+ Ajouter au panier</button>`}
     </div>
   </article>`;
