@@ -1152,7 +1152,14 @@ async function startCheckout(items, delivery, deliveryDetail, triggerBtn){
 }
 
 function buyNow(title, price, btn){
-  startCheckout([{ title, price }], null, null, btn);
+  const alreadyInCart = cart.some(item => item.title === title);
+  if(!alreadyInCart){
+    cart.push({ title, price });
+    syncCartButtons();
+    updateCartBar();
+  }
+  renderCartLines();
+  document.getElementById('cartOverlay').classList.add('open');
 }
 
 /* ---------- Panier ---------- */
