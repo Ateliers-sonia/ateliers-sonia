@@ -132,7 +132,45 @@ Référence de paiement Stripe : ${session.id}
 
     if (!resendRes.ok) {
       const errText = await resendRes.text();
-      return { statusCode: 502, body: `Échec envoi Resend: ${errText}` };
+      return { statusCode: 502, body: `Échec envoi Resend (Sonia): ${errText}` };
+    }
+
+    // Email de confirmation pour l'acheteur, si une adresse valide a été renseignée
+    if (session.customer_details?.email) {
+      const buyerBody = `Bonjour,
+
+Merci pour votre commande sur Ateliers Sonia ! Voici le récapitulatif :
+
+${items}
+
+Total : ${total} €
+
+Mode de livraison : ${delivery}
+${pointRelais ? 'Point relais choisi : ' + pointRelais : (shippingText ? 'Adresse : ' + shippingText : '')}
+
+Sonia prépare votre tableau avec soin. Vous recevrez un nouveau message dès l'expédition, avec le numéro de suivi.
+
+Pour toute question, répondez simplement à cet email ou écrivez à contact@ateliers-sonia.fr.
+
+À très bientôt,
+Sonia — Ateliers Sonia
+`;
+
+      await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${RESEND_API_KEY}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          from: RESEND_FROM,
+          to: session.customer_details.email,
+          subject: `Confirmation de votre commande — Ateliers Sonia`,
+          text: buyerBody
+        })
+      });
+      // On ne bloque pas la réponse si cet envoi échoue : la commande et
+      // l'email à Sonia sont déjà confirmés à ce stade.
     }
 
     return { statusCode: 200, body: 'ok' };
