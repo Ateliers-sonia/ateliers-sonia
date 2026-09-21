@@ -737,6 +737,8 @@
     max-height: 70vh;
   }
   .lightbox-frame img, .lightbox-frame .placeholder{ width:100%; height:100%; object-fit:cover; }
+  .lightbox-frame.fit-contain{ background: var(--linen-dark); margin: 0 auto; }
+  .lightbox-frame.fit-contain img{ object-fit: contain; }
   .lightbox-cap{
     margin-top: 12px;
     display:flex;
@@ -888,7 +890,7 @@
         <div class="how-item">
           <div class="num">02</div>
           <h3>Paiement sécurisé</h3>
-          <p>Le règlement se fait en ligne par carte bancaire. Le prix affiché inclut les frais d'expédition en France métropolitaine.</p>
+          <p>Le règlement se fait en ligne par carte bancaire. Le prix affiché inclut les frais d'expédition en France métropolitaine. Pour un envoi en DOM-TOM ou à l'international, contactez-moi avant votre achat afin d'organiser la livraison ensemble.</p>
         </div>
         <div class="how-item">
           <div class="num">03</div>
@@ -951,7 +953,7 @@
 <footer>
   <div class="wrap footer-row">
     <span class="brand signature"><img src="images/logo.png" alt="Ateliers Sonia" class="footer-logo"></span>
-    <span>© 2026 Ateliers Sonia — Toutes les œuvres sont protégées par le droit d'auteur. — <a href="mentions-legales.html" style="color:var(--walnut-soft); text-decoration:underline;">Mentions légales</a></span>
+    <span>© 2026 Ateliers Sonia — Toutes les œuvres sont protégées par le droit d'auteur. — <a href="mentions-legales.html" style="color:var(--walnut-soft); text-decoration:underline;">Mentions légales</a> · <a href="cgv.html" style="color:var(--walnut-soft); text-decoration:underline;">CGV</a></span>
   </div>
 </footer>
 
@@ -1000,7 +1002,7 @@
       <label style="display:block; font-family:'JetBrains Mono', monospace; font-size:0.7rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--walnut-soft); margin-bottom:8px;">Choisissez votre point relais</label>
       <div id="Zone_Widget" style="max-height:320px; overflow-y:auto;"></div>
       <input type="hidden" id="Retour_Widget" value="">
-      <p id="mrSelectedInfo" style="margin-top:8px; font-size:0.85rem; color:var(--sage); font-family:'JetBrains Mono', monospace;"></p>
+      <input type="text" id="mrSelectedInfo" readonly style="margin-top:8px; width:100%; padding:8px 10px; font-size:0.85rem; color:var(--sage); font-family:'JetBrains Mono', monospace; background:var(--linen); border:1px solid var(--line);">
     </div>
     <button class="cart-submit" id="cartSubmitBtn">Payer maintenant</button>
   </div>
@@ -1023,10 +1025,13 @@
   - dims       : dimensions réelles de la toile
   - price      : prix en euros, frais de port France inclus
   - sold       : true si déjà vendu
+  - ratio      : (facultatif) format du cadre photo si la photo n'est pas en 4:5, ex. "3 / 4" (photo portrait) ou "4 / 3" (photo paysage)
   - buyLink    : non utilisé (le paiement est généré automatiquement via Stripe), à laisser tel quel
   ============================================================
 */
 const paintings = [
+  { image:"images/arbre-du-savoir.jpg", title:"L'arbre du savoir", category:"fantastique", mediumLabel:"Acrylique sur toile", dims:"55 × 75 cm", price:175, sold:true, buyLink:"#" },
+  { image:"images/renaissance.jpg", title:"Renaissance", category:"spirituel", mediumLabel:"Acrylique sur toile", dims:"40 × 50 cm", price:150, sold:true, buyLink:"#" },
   { image:"images/delivrance.jpg", title:"Délivrance", category:"spirituel", mediumLabel:"Acrylique sur toile", dims:"55 × 75 cm", price:180, sold:true, buyLink:"#" },
 
   { image:"images/ailes-flamboyantes.jpg", title:"Ailes flamboyantes", category:"spirituel", mediumLabel:"Acrylique sur toile", dims:"40 × 50 cm", price:130, sold:true, buyLink:"#" },
@@ -1057,9 +1062,15 @@ const paintings = [
 
   { image:"images/sous-les-cerisiers.jpg", title:"Sous les cerisiers", category:"paysage", mediumLabel:"Acrylique sur toile", dims:"55 × 75 cm", price:200, sold:true, buyLink:"#" },
 
-  { image:"images/l-arbre-de-vie.jpg", title:"L'arbre de vie", category:"spirituel", mediumLabel:"Acrylique sur toile", dims:"55 × 75 cm", price:175, sold:true, buyLink:"#" },
+  { image:"images/ange-et-etoile.jpg", title:"L'ange et l'étoile", category:"spirituel", mediumLabel:"Acrylique sur toile", dims:"55 × 75 cm", price:190, sold:true, buyLink:"#" },
 
-  { image:"images/la-fee-et-le-dragon.jpg", title:"La fée et le dragon", category:"fantastique", mediumLabel:"Acrylique sur toile", dims:"55 × 75 cm", price:210, sold:false, buyLink:"#" },
+  { image:"images/la-fee-et-le-dragon.jpg", title:"La fée et le dragon", category:"fantastique", mediumLabel:"Acrylique sur toile", dims:"55 × 75 cm", price:210, sold:true, buyLink:"#" },
+
+  { image:"images/la-breche-tendre.jpg", title:"La brèche tendre", category:"fantastique", mediumLabel:"Acrylique sur toile", dims:"40 × 50 cm", price:150, sold:false, buyLink:"#" },
+
+  { image:"images/le-perroquet-du-temps.jpg", title:"Le perroquet du temps", category:"fantastique", mediumLabel:"Acrylique sur toile", dims:"30 × 40 cm", price:125, sold:true, buyLink:"#" },
+
+  { image:"images/la-cathedrale-des-engrenages.jpg", title:"La cathédrale des engrenages", category:"fantastique", mediumLabel:"Acrylique sur toile", dims:"40 × 50 cm", price:110, sold:true, buyLink:"#" },
 ];
 
 const grid = document.getElementById('galleryGrid');
@@ -1070,7 +1081,7 @@ function cardHTML(p, i){
     : `<div class="placeholder">Photo à ajouter<br>« ${p.title} »</div>`;
   return `
   <article class="card" data-category="${p.category}">
-    <div class="card-frame" data-index="${i}">
+    <div class="card-frame" data-index="${i}"${p.ratio ? ` style="aspect-ratio:${p.ratio}"` : ''}>
       ${imgOrPlaceholder}
       <span class="badge ${p.sold ? 'sold' : ''}">${p.sold ? 'Vendu' : 'Disponible'}</span>
     </div>
@@ -1083,7 +1094,7 @@ function cardHTML(p, i){
           ? `<button class="buy-btn" disabled>Vendu</button>`
           : `<button class="buy-btn" data-buy-now="${p.title}|${p.price}">Acheter</button>`}
       </div>
-      ${p.sold ? '' : `<p class="shipping-note">Envoi en France métropolitaine inclus</p>`}
+      ${p.sold ? '' : `<p class="shipping-note">Envoi en France métropolitaine inclus — DOM-TOM/international : nous contacter</p>`}
       ${p.sold ? '' : `<button class="cart-btn" data-cart-add="${p.title}|${p.price}">+ Ajouter au panier</button>`}
     </div>
   </article>`;
@@ -1151,7 +1162,14 @@ async function startCheckout(items, delivery, deliveryDetail, triggerBtn){
 }
 
 function buyNow(title, price, btn){
-  startCheckout([{ title, price }], null, null, btn);
+  const alreadyInCart = cart.some(item => item.title === title);
+  if(!alreadyInCart){
+    cart.push({ title, price });
+    syncCartButtons();
+    updateCartBar();
+  }
+  renderCartLines();
+  document.getElementById('cartOverlay').classList.add('open');
 }
 
 /* ---------- Panier ---------- */
@@ -1243,7 +1261,11 @@ document.getElementById('deliveryMethod').addEventListener('change', (e)=>{
         Country: "FR",
         NbResults: "7",
         Responsive: true,
-        ShowResultsOnMap: false
+        ShowResultsOnMap: false,
+        OnParcelShopSelected: function(data){
+          const full = `${data.Nom} — ${data.Adresse1}${data.Adresse2 ? ' ' + data.Adresse2 : ''}, ${data.CP} ${data.Ville} (réf. ${data.ID})`;
+          document.getElementById('mrSelectedInfo').value = full;
+        }
       });
       mrWidgetLoaded = true;
     }
@@ -1261,7 +1283,7 @@ document.getElementById('cartSubmitBtn').addEventListener('click', (e)=>{
       alert('Merci de sélectionner un point relais dans la liste avant de valider.');
       return;
     }
-    deliveryDetail = document.getElementById('mrSelectedInfo').textContent.trim();
+    deliveryDetail = document.getElementById('mrSelectedInfo').value.trim();
   }
   const items = cart.map(item => ({ title: item.title, price: item.price }));
   startCheckout(items, delivery, deliveryDetail, e.currentTarget);
@@ -1330,6 +1352,8 @@ function openLightbox(p){
     : `<div class="placeholder" style="background:linear-gradient(135deg,#C98F4E,#A8622F,#6E7C5B,#3C4A68);">Photo à ajouter<br>« ${p.title} »</div>`;
   lightboxTitle.textContent = p.title;
   lightboxMeta.textContent = `${p.mediumLabel} · ${p.dims} · ${p.sold ? 'Vendu' : p.price + ' €'}`;
+  lightboxFrame.style.aspectRatio = p.ratio || '';
+  lightboxFrame.classList.toggle('fit-contain', !!p.ratio);
   lightbox.classList.add('open');
 }
 document.getElementById('lightboxClose').addEventListener('click', ()=> lightbox.classList.remove('open'));
